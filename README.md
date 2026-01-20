@@ -50,6 +50,11 @@ net-ai-project-template/
     └── .gitkeep                       # Placeholder (remove when adding tests)
 ```
 
+## AI Agents
+
+This project uses AGENTS.md as the single source of truth
+for AI agent behavior and coding rules.
+
 ## 📚 File and Folder Descriptions
 
 ### 🤖 AI IDE Configuration Files
