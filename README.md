@@ -2,6 +2,8 @@
 
 A .NET AI project template designed for seamless integration with AI-powered IDEs (Kilo Code, Roo AI, Kiro Amazon). This template provides a structured foundation for building AI-enhanced applications with comprehensive documentation, testing strategies, and AI IDE support.
 
+Inspired by [Full AI Coding Assistant Workflow](https://docs.google.com/document/d/12ATcyjCEKh8T-MPDZ-VMiQ1XMa9FUvvk2QazrsKoiR8/edit?tab=t.0)
+
 ## 🚀 Quick Start
 
 ```bash
@@ -47,6 +49,11 @@ net-ai-project-template/
 └── test/                              # Test files directory
     └── .gitkeep                       # Placeholder (remove when adding tests)
 ```
+
+## AI Agents
+
+This project uses AGENTS.md as the single source of truth
+for AI agent behavior and coding rules.
 
 ## 📚 File and Folder Descriptions
 
@@ -160,37 +167,6 @@ This template is optimized for AI-powered development with:
 2. Initialize your Git repository if not already done
 3. Set up your preferred AI IDE (Kilo, Roo, or Kiro)
 4. Configure MCP servers as needed (see `.roo/mcp.json`)
-
-### Coding Standards
-
-- Follow guidelines in `docs/coding.md`
-- Use modern C# features (.NET 6+)
-- Implement comprehensive testing (unit + property-based)
-- Maintain clear documentation and comments
-
-### AI IDE Usage
-
-- **Kilo**: Use for code analysis, refactoring, and optimization
-- **Roo**: Use for rule-based guidance and documentation
-- **Kiro**: Use for steering documents and consistency checks
-- **Context7**: Use for library documentation and code generation
-
-### Testing Strategy
-
-- **Unit Tests**: Cover happy path, boundary cases, and error scenarios
-- **Property-Based Tests**: Use FsCheck/Hedgehog for universal properties
-- **Test Organization**: Mirror source structure in `/tests` directory
-- **Minimum Requirements**: 100 iterations for property tests
-
-## 📈 Project Roadmap
-
-The project follows a phased development approach:
-
-1. **Phase 1 (MVP)**: Core functionality implementation
-2. **Phase 2 (MVP)**: Testing and validation
-3. **Phase 3 (Production)**: Optimization and deployment
-
-See `docs/roadmap.md` for detailed phase descriptions and milestones.
 
 ## 🤝 Contributing
 
