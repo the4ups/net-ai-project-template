@@ -168,37 +168,6 @@ This template is optimized for AI-powered development with:
 3. Set up your preferred AI IDE (Kilo, Roo, or Kiro)
 4. Configure MCP servers as needed (see `.roo/mcp.json`)
 
-### Coding Standards
-
-- Follow guidelines in `docs/coding.md`
-- Use modern C# features (.NET 6+)
-- Implement comprehensive testing (unit + property-based)
-- Maintain clear documentation and comments
-
-### AI IDE Usage
-
-- **Kilo**: Use for code analysis, refactoring, and optimization
-- **Roo**: Use for rule-based guidance and documentation
-- **Kiro**: Use for steering documents and consistency checks
-- **Context7**: Use for library documentation and code generation
-
-### Testing Strategy
-
-- **Unit Tests**: Cover happy path, boundary cases, and error scenarios
-- **Property-Based Tests**: Use FsCheck/Hedgehog for universal properties
-- **Test Organization**: Mirror source structure in `/tests` directory
-- **Minimum Requirements**: 100 iterations for property tests
-
-## 📈 Project Roadmap
-
-The project follows a phased development approach:
-
-1. **Phase 1 (MVP)**: Core functionality implementation
-2. **Phase 2 (MVP)**: Testing and validation
-3. **Phase 3 (Production)**: Optimization and deployment
-
-See `docs/roadmap.md` for detailed phase descriptions and milestones.
-
 ## 🤝 Contributing
 
 1. **Fork the repository** and create your feature branch
