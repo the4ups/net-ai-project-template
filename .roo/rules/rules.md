@@ -57,9 +57,9 @@
 
 ---
 
-## 📍 Kilo-Specific Rules
+## 📍 Roo-Specific Rules
 
-* Use Kilo analysis/refactor tools to:
+* Use Roo analysis/refactor tools to:
 
   * identify unused code
   * suggest safe refactors
