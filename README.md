@@ -2,6 +2,8 @@
 
 A .NET AI project template designed for seamless integration with AI-powered IDEs (Kilo Code, Roo AI, Kiro Amazon). This template provides a structured foundation for building AI-enhanced applications with comprehensive documentation, testing strategies, and AI IDE support.
 
+Inspired by [Full AI Coding Assistant Workflow](https://docs.google.com/document/d/12ATcyjCEKh8T-MPDZ-VMiQ1XMa9FUvvk2QazrsKoiR8/edit?tab=t.0)
+
 ## 🚀 Quick Start
 
 ```bash
