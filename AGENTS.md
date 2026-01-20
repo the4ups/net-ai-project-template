@@ -1,13 +1,15 @@
 # AGENTS.md
 
 You are an AI agent working inside this repository.
-You must follow these rules strictly.
+These rules define the **contract** between you and the project.
+
+Follow them strictly.
 
 ---
 
-## MUST (Hard Rules)
+## MUST — Hard Rules
 
-### Project Understanding
+### 1. Project Context
 
 * Always read and respect:
 
@@ -15,56 +17,78 @@ You must follow these rules strictly.
   * `docs/tech.md`
   * `docs/coding.md`
   * `docs/domain.md` (if present)
-* If requirements or context are missing or unclear, **ask questions before coding**.
-* Do not guess domain rules or architecture.
+  * `docs/product.md` and `docs/roadmap.md` (if relevant)
+* If requirements, domain rules, or architecture are unclear, **ask questions before writing code**.
+* Do not guess missing requirements.
 
-### Code Quality
+### 2. Code Quality
 
 * Generate **production-ready, compilable C# code**.
-* Follow rules defined in `docs/coding.md`.
-* Respect architectural boundaries defined in `docs/structure.md`.
-* Do not invent APIs, libraries, types, or infrastructure.
+* Follow all conventions defined in `docs/coding.md`.
+* Respect existing project patterns and naming.
+* Do not invent APIs, libraries, infrastructure, or abstractions.
 * Do not introduce breaking changes without explicit confirmation.
 
-### Architecture
+### 3. Architecture
 
-* Enforce clear layer boundaries:
+* Enforce strict layer boundaries:
 
-  * Domain → Application → Infrastructure
+  * **Domain → Application → Infrastructure**
 * Domain layer must not depend on Application or Infrastructure.
 * Prefer composition over inheritance.
-* No static state without strong justification.
+* Avoid static state unless explicitly justified.
+* Do not introduce abstractions prematurely.
 
-### Testing
+### 4. Testing
 
-* Every new behaviour must include tests.
+* Every new or changed behavior **must include tests**.
 * Tests must cover:
 
   * happy path
   * boundary cases
   * error cases
-* Tests must be deterministic and readable.
+* Tests must be deterministic, readable, and isolated.
+* Use property-based tests **only when domain logic benefits from invariants and broad input coverage**.
 
-### Security
+### 5. Security
 
 * Treat all external input as untrusted.
 * Never hardcode secrets, tokens, or credentials.
-* Do not log sensitive data.
+* Do not log sensitive or personal data.
+* Follow secure defaults and OWASP best practices.
 
 ---
 
-## SHOULD (Strong Recommendations)
+## SHOULD — Strong Recommendations
 
-* Prefer simple, explicit solutions.
-* Keep files small and focused (avoid >500 lines).
+* Prefer simple and explicit solutions.
+* Keep files small and focused (avoid files larger than ~500 lines).
 * Prefer pure functions where possible.
-* Add documentation to `docs/*.md` when implementing non-trivial features.
-* Explain non-obvious decisions briefly.
+* Add or update documentation in `docs/*.md` when implementing non-trivial features.
+* Explain **non-obvious decisions** briefly in code or comments.
+* Maintain consistency with existing code over introducing new patterns.
 
 ---
 
-## CONTEXT (Guidance)
+## CONTEXT — Guidance
 
-* This project favors clarity over cleverness.
-* Consistency with existing code is more important than introducing new patterns.
-* If multiple valid approaches exist, choose the simplest one.
+* This project values **clarity over cleverness**.
+* Consistency and maintainability are more important than micro-optimizations.
+* If multiple valid solutions exist, choose the simplest reasonable one.
+* When in doubt, ask before acting.
+
+---
+
+## Tooling & Workflow
+
+* Use standard .NET CLI commands when needed:
+
+  * `dotnet build`
+  * `dotnet test`
+  * `dotnet format`
+* Do not assume CI/CD behavior unless documented.
+* Generated code should pass existing tests without modification unless explicitly requested.
+
+---
+
+`AGENTS.md` is the **single source of truth** for AI agent behavior in this project.
