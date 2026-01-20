@@ -79,15 +79,38 @@ Follow them strictly.
 
 ---
 
-## Tooling & Workflow
+## Tooling, Setup & CI
 
-* Use standard .NET CLI commands when needed:
+### Setup
 
-  * `dotnet build`
-  * `dotnet test`
-  * `dotnet format`
-* Do not assume CI/CD behavior unless documented.
-* Generated code should pass existing tests without modification unless explicitly requested.
+* Restore packages and build project:
+
+  ```bash
+  dotnet restore
+  dotnet build
+  ```
+
+* Format code consistently:
+
+  ```bash
+  dotnet format
+  ```
+
+* Run tests locally:
+
+  ```bash
+  dotnet test --no-build --verbosity normal
+  ```
+
+* If new project references or packages are added, ensure `dotnet restore` completes successfully.
+
+### CI Guidelines
+
+* All code must pass `dotnet build` and `dotnet test` on CI before merging.
+* Maintain code formatting as verified by `dotnet format`.
+* Tests must remain deterministic and pass consistently across CI agents.
+* Do not introduce breaking changes without PR approval.
+* Include test coverage for all new features and significant logic changes.
 
 ---
 
