@@ -22,17 +22,13 @@ cd net-ai-project-template
 net-ai-project-template/
 ├── .gitignore                          # Git ignore rules
 ├── README.md                           # Project documentation (this file)
+├── AGENTS.md                           # Main AI Rules 
 ├── .kilocode/                         # Kilo Code AI configuration
 │   └── rules/
 │       └── rules.md                   # Kilo-specific rules and guidelines
 ├── .kiro/                             # Kiro AI configuration
 │   ├── specs/                         # Kiro specifications
 │   └── steering/                      # Kiro steering documents
-│       ├── coding.md                  # Kiro coding standards
-│       ├── domain.md                  # Kiro domain rules
-│       ├── product.md                 # Kiro product guidance
-│       ├── structure.md               # Kiro structure guidance
-│       └── tech.md                    # Kiro technical guidance
 ├── .roo/                              # Roo AI configuration
 │   ├── mcp.json                       # MCP server configuration
 │   └── rules/
