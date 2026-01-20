@@ -1,45 +1,95 @@
-# Соглашения по кодированию на `C#`
+# C# Coding Rules (LLM Prompt)
 
-## Общие принципы
+You generate **production-ready C# code**.
 
-- **Используй современный C#** (.NET 6+)
-- **Следуй стандартам Microsoft** ([C# coding conventions](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/coding-conventions))
-- Предпочитай явное неявному
-- Избегай "магических чисел" и строк
-- Стремись к неизменяемости (immutability)
+## General
 
-## Стиль кода
+* Use **modern C# (.NET 12+)**
+* Follow **Microsoft C# coding conventions**
+* Prefer **clarity and explicitness** over cleverness
+* Avoid magic numbers and strings
+* Favor **immutability**
+* Output must compile
 
-- **Используй строгую типизацию** и nullable reference types
-- **Применяй современные возможности языка** (records, pattern matching и т.д.)
-- Форматируй код с помощью `dotnet format` или средств IDE
-- Для валидации данных используй `DataAnnotations` или `FluentValidation`
+## Style
 
-## Асинхронное программирование
+* Nullable reference types enabled
+* Strong typing, no `dynamic`
+* Use modern C# features when they improve readability
+* Keep methods small and single-purpose
+* Use `var` only when the type is obvious
+* Format code as `dotnet format`
 
-- Используй **async/await** везде, где есть I/O операции
-- **Избегай блокирующих вызовов** (`.Result`, `.Wait()`)
-- Называй асинхронные методы с суффиксом `Async`
+## Naming
 
-## Документация
+* PascalCase: classes, records, public members
+* camelCase: locals, parameters, private fields
+* Interfaces start with `I`
+* Async methods end with `Async`
+* Avoid obscure abbreviations
 
-- Добавляй XML-документацию для всех публичных API:
+## Architecture
 
-```csharp
-/// <summary>
-/// Краткое описание метода.
-/// </summary>
-/// <param name="param1">Описание параметра.</param>
-/// <returns>Описание возвращаемого значения.</returns>
-public async Task<int> ExampleMethodAsync(int param1) { ... }
-```
+* Follow **SOLID**
+* Clear separation of concerns
+* Prefer composition over inheritance
+* No premature abstractions
+* No static state without strong justification
 
-## Логирование
+## Dependency Injection
 
-- Используй только **структурированное логирование**
-- **Логируй до и после вызовов LLM** (время выполнения, статус)
+* Constructor injection only
+* No `IServiceProvider` usage
+* Correct service lifetimes
+* No service locator pattern
 
-## Тестирование
+## Async
 
-- **Юнит-тестируй бизнес-логику**
-- Применяй TDD подход для сложной логики
+* Use `async/await` for all I/O
+* Never use `.Result` or `.Wait()`
+* Async all the way
+* Pass `CancellationToken` when applicable
+
+## Errors
+
+* Do not swallow exceptions
+* Exceptions are not control flow
+* Catch only to handle or add context
+* Use domain-specific exceptions when appropriate
+
+## Validation
+
+* Validate all external input
+* Use FluentValidation or DataAnnotations
+* Validation is separate from business logic
+
+## Logging
+
+* Structured logging only
+* No sensitive data in logs
+* Log important state changes and errors
+* For LLM calls: log before/after, duration, status
+
+## Documentation
+
+* XML docs for all public APIs
+* Comments explain **why**, not **what**
+
+## Testing
+
+* Unit test business logic
+* Prefer pure functions
+* Tests must be deterministic and readable
+
+## Security
+
+* Treat all input as untrusted
+* No hardcoded secrets
+* Follow secure defaults
+
+## LLM Rules
+
+* Do not invent APIs or types
+* Prefer existing project patterns
+* Choose the simplest reasonable solution
+* Explain only non-obvious decisions

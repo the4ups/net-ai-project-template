@@ -2,7 +2,7 @@
 
 ## Language & Runtime
 
-- C# (.NET 10+)
+- C# (.NET 12+)
 - ASP.NET Core (Minimal APIs)
 
 ## Cloud Provider
