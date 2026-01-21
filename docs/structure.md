@@ -1,79 +1,47 @@
-# $YourProjectName$ - Project Structure
+# Project Structure
 
-## Repository Layout
+## 📂 Root Layout (recommended)
 
-/src
-  /$YourProjectName$.Fetcher
-    - Serverless container
-    - Fetching Telegram posts and send them to processor
-  /$YourProjectName$.Processor
-    - Serverless container
-    - Preprocessing, deduplication, enrichment
-  /$YourProjectName$.Llm
-    - LLM adapters and prompt handling
-  /$YourProjectName$.Domain
-    - Core domain models
-    - Business rules
-  /$YourProjectName$.Infrastructure
-    - YDB access
-    - External API clients
-  /$YourProjectName$.Shared
-    - DTOs
-    - Common utilities
-    - Result types
-  /$YourProjectName$.TelegramAuth
-    - Utility to prepare `WTelegram.session` file
-  /$YourProjectName$.DbMigration
-    - Database migration utility for applying Entity Framework Core migrations to YDB
-  /$YourProjectName$.TelegramReviewBot
-    - Serverless container
-    - Telegram Bot for manual review workflow
-/tests
-  /$YourProjectName$.Domain.Tests
-  /$YourProjectName$.Fetcher.Tests
-  /$YourProjectName$.Infrastructure.Tests
-  /$YourProjectName$.TelegramReviewBot.Tests
+```
+/src        → production code
+/tests      → automated tests
+/docs       → documentation & rules
+/build      → scripts, CI helpers (optional)
+```
 
-/docs
-  coding.md
-  domain.md
-  product.md
-  roadmap.md
-  structure.md
-  tech.md
+---
 
-## Architectural Style
+## 📦 src/
 
-- Modular monolith (logical separation, deployable independently)
-- Clear domain boundaries
-- Dependency Inversion (Domain has no external dependencies)
+The `src` folder contains application code.
 
-## Naming Conventions
+Common patterns:
 
-- Projects: $YourProjectName$.<Area>
-- Classes: PascalCase
-- Interfaces: I<Name>
-- Async methods: <MethodName>Async
+- `Api` / `Web` — ASP.NET Core apps
+- `Application` — business logic
+- `Infrastructure` — external integrations
+- `Domain` — optional, if domain-driven design is used
 
-## Dependency Rules
+AI agents should mirror existing structure.
 
-- Domain → no dependencies
-- Application/Processor → Domain
-- Infrastructure → Domain + Application
-- LLM adapters → Domain contracts only
+---
 
-## Configuration
+## 🧪 tests/
 
-- Environment variables only
-- No configuration files with secrets
+Each project in `/src` should have a corresponding test project:
 
-## Error Handling
+```
+MyApp → MyApp.Tests
+```
 
-- Explicit Result<T> types
-- No silent failures
+Test projects must:
 
-## Versioning
+- Reference only what they test
+- Avoid shared mutable state
 
-- Prompt versions are explicit
-- Channel context is versioned
-- Breaking changes require version bump
+---
+
+## ❗ Rules
+
+- Do not mix test and production code
+- Keep namespaces aligned with folders

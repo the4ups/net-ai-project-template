@@ -1,28 +1,38 @@
-# $YourProjectName$ - Technology Stack
+# Technology Stack
 
 ## Language & Runtime
 
-- C# (.NET 12+)
-- ASP.NET Core (Minimal APIs)
+- C# (.NET 8+ LTS or latest stable)
+- ASP.NET Core (if web application needed)
 
-## Cloud Provider
+## Build & Testing
 
-## Compute
+- dotnet CLI
+- xUnit (default testing framework)
+- Moq / NSubstitute (mocking)
 
-## Storage
+## Data & Storage
 
-## LLM Providers
+- Entity Framework Core (if database needed)
+- JSON for serialization
 
-## Data Formats
+## Logging & Monitoring
 
-- JSON for all internal contracts
-- Strongly typed DTOs in C#
-- Explicit JSON schema validation for LLM responses
+- Microsoft.Extensions.Logging
+- Structured logging
 
-## Messaging & Scheduling
+## Configuration
 
-## Observability
+- Microsoft.Extensions.Configuration
+- Environment variables for secrets
 
-## Security
+## Deployment
+
+- Docker (optional)
+- Cloud-agnostic by default
 
 ## Constraints
+
+- No framework lock-in (MediatR, etc.)
+- Prefer standard .NET libraries
+- Keep dependencies minimal
