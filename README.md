@@ -59,29 +59,16 @@ The project includes comprehensive configuration for three AI-powered IDEs:
 
 #### **`.kilocode/` - Kilo Code AI Configuration**
 
-- **`rules/rules.md`**: Contains Kilo-specific guidelines including:
-  - Project awareness and context rules
-  - Code structure and modularity requirements (500-line limit per file)
-  - Testing strategy (unit tests + property-based tests)
-  - Documentation standards
-  - Kilo-specific tools and optimization practices
-  - Context7 MCP server integration for code generation and documentation
+- **`rules/rules.md`**: Contains Kilo-specific guidelines
 
 #### **`.roo/` - Roo AI Configuration**
 
 - **`mcp.json`**: MCP (Model Context Protocol) server configuration
-- **`rules/rules.md`**: Roo-specific guidelines including:
-  - Project documentation references
-  - Code structure and naming conventions
-  - Testing strategy with property-based testing requirements
-  - Roo-specific tools and optimization practices
-  - Context7 integration for library documentation and setup
+- **`rules/rules.md`**: Roo-specific guidelines
 
 #### **`.kiro/` - Kiro Amazon AI Configuration**
 
-- **`steering/`**: Contains Kiro steering documents that reference main documentation:
-  - `coding.md`, `domain.md`, `product.md`, `structure.md`, `tech.md`
-- These files provide Kiro-specific guidance while maintaining consistency with main docs
+- **`steering/`**: Contains Kiro steering specific documents
 
 ### 📖 Documentation Files (`docs/`)
 
@@ -108,7 +95,6 @@ The `docs/` directory contains comprehensive project documentation:
   - Milestones and deliverables
 
 - **`structure.md`**: Architectural guidance
-  - Modular monolith architecture
   - Dependency rules and layer separation
   - Naming conventions and versioning strategy
   - Project layout and organization
